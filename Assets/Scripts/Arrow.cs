@@ -33,6 +33,9 @@ namespace Archer
             hit = true;
 
             // Reproducir el impacto de la flecha
+
+            
+      
   
 
             // Hacemos que la flecha sea hija del objeto contra el que impacta, para que se mueva con el

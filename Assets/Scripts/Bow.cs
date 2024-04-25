@@ -48,21 +48,14 @@ namespace Archer
         private IEnumerator Shoot()
         {
           
-
+            animator.SetTrigger("Shoot");
             yield return new WaitForSeconds(0.3f);
 
-
-            // Instanciar una flecha
-           
-
-            // Colocar la flecha en el punto de referencia de la mano de la arquera
-         
-
-            // Orientar la flecha hacia delante con respecto a la arquera
-           
-
-            // Aplicar una fuerza a la flecha para que salga disparada
-          
+            GameObject arrow = Instantiate(arrowPrefab);
+            arrow.transform.position = handPosition.position;
+            arrow.transform.rotation = this.transform.rotation;
+       
+            arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * force);
         }
     }
 

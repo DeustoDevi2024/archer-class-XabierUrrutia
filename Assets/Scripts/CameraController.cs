@@ -35,7 +35,9 @@ namespace Archer
 
         private void Update()
         {
-  
+            Vector3 newPos = target.position - target.forward * distance;
+            this.transform.position = newPos + offset;
+            this.transform.LookAt(target.position + offset);
         }
 
     }

@@ -8,6 +8,7 @@ namespace Archer
 
     public class Enemy : MonoBehaviour, IScoreProvider
     {
+       public GameObject lightEnvairoment;
 
         // Cuántas vidas tiene el enemigo
         [SerializeField]
@@ -25,13 +26,14 @@ namespace Archer
         // Método que se llamará cuando el enemigo reciba un impacto
         public void Hit()
         {
-         
+            
         }
 
-        private void Die()
+        /*private void Die()
         {
-           
-        }
+            lightEnvairoment.transform.Rotate(new Vector3(0,180,0));
+            yield return new WaitForSeconds(0.3f);
+        }*/
     }
 
 }
