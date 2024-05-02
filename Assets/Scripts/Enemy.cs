@@ -25,11 +25,13 @@ namespace Archer
         // Método que se llamará cuando el enemigo reciba un impacto
         public void Hit()
         {
-            hitPoints--;
-            if (hitPoints == 0)
+            if (hitPoints <= 0)
             {
-                StartCoroutine(LightEnable());
+                
                 Die();
+            }else
+            {
+                hitPoints -= 1;
             }
 
         }
@@ -37,8 +39,8 @@ namespace Archer
         private void Die()
         {
 
-            LightEnable();
-            Destroy(this.gameObject);
+            StartCoroutine(LightEnable());
+           
 
         }
 
@@ -48,7 +50,9 @@ namespace Archer
             sun.transform.rotation = Quaternion.Euler(90, 0, 0);
             yield return new WaitForSeconds(3);
             sun.transform.rotation = Quaternion.Euler(180, 0, 0);
-            
+            Destroy(this.gameObject);
+
+
         }
 
     }
