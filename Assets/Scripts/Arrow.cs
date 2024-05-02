@@ -8,6 +8,7 @@ namespace Archer
 
         private Rigidbody arrowRigidbody;
         private bool hit;
+        public AudioSource impactSound;
 
         private void Awake()
         {
@@ -34,7 +35,7 @@ namespace Archer
 
             // Reproducir el impacto de la flecha
 
-
+            impactSound.Play();
             // Hacemos que la flecha sea hija del objeto contra el que impacta, para que se mueva con el
 
             transform.parent = other.transform;
